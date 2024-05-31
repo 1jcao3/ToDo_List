@@ -1,0 +1,31 @@
+#search{
+
+display: flex ;
+height: 50px;
+width: 200px;
+font-size: 1.5rem;
+text-align: center;
+border-style:solid;
+border-width: 10px;
+border-radius: 3%;
+
+
+}
+#search:focus{
+
+
+    color: rgb(208, 0, 255);
+    border-color: rgb(0, 255, 47);
+}
+
+#check{
+
+
+display: flex;
+width: 20px;
+height: 20px;
+margin-left:auto ;
+border-style: none ;
+border-color: blue;
+
+}

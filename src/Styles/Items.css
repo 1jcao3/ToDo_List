@@ -1,0 +1,22 @@
+
+
+.listItem{
+
+display: flex;
+flex-direction: column;
+    
+}
+li{
+    list-style:square;
+display: flex;
+    }
+span{
+
+
+    display: grid;
+    grid-template-columns: 20% 1fr ;
+    margin: 30px;
+    font-size: 1.5rem;
+    align-items: center;
+    gap: 10px;
+}

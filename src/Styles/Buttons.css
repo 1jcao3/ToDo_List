@@ -1,0 +1,18 @@
+.Delete{
+
+   display: block; 
+}
+#check{
+
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+  font-size: 1em;
+}
+
+#delete{
+
+cursor: pointer;
+
+}
