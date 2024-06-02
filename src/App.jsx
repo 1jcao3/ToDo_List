@@ -1,36 +1,11 @@
 import React from "react";
-import Title from "./components/Title";
-import Search from "./components/Search";
-import List from "./components/List";
-import Counter from "./components/Counter";
-import Item from "./components/Item";
+import AppUI from "./AppUI";
 import './Styles/General.css';
 import './Styles/App.css';
 import './Styles/Items.css';
+import useLocalStorage from "./components/customHooks/useLocalSorage";
 
 
-function useLocalStorage(itemName,initialValue){
-
-
-
-  const localStorageItem = localStorage.getItem(itemName);
-  let parsedItem;
-
-  if (!localStorageItem) {
-    parsedItem = initialValue;
-    localStorage.setItem(itemName, JSON.stringify([]));
-  } else {
-    parsedItem = JSON.parse(localStorageItem);
-  }
-
-  const [item,setItem]=React.useState(parsedItem) 
-  const saveItem = (newItem) => {
-    localStorage.setItem("ToDo_v1", JSON.stringify(newItem));
-    setItem(newItem);
-  };
-
-  return[item,saveItem]
-}
 
 
 export default function App() {
@@ -38,7 +13,7 @@ export default function App() {
 
   const [completed, setCompleted] = React.useState(false);
   const [searchValue, setsearchValue] = React.useState('');
-  const [todos, saveTodos] = useLocalStorage('ToDos_v1',[])
+  const {item:todos, saveItem:saveTodos,loading,error} = useLocalStorage('ToDos_v1',[])
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -74,30 +49,11 @@ export default function App() {
     saveTodos(newToDos);
   };
 
-  return (
-    <>
-      <div className="container">
-        <section id="sectionOne">
-          <Title />
-          <Counter DidHomeworks={completedTodos} Homeworks={totalTodos} completed={completed} />
-          <Search searchValue={searchValue} setsearchValue={setsearchValue} />
-        </section>
-        <section id="sectionTwo">
-          <List>
-            <>
-              {searching.map((todo) => (
-                <Item
-                  key={todo.text}
-                  text={todo.text}
-                  completed={todo.completed}
-                  onCompleted={() => completing(todo.text)}
-                  onDelete={() => deleting(todo.text)}
-                />
-              ))}
-            </>
-          </List>
-        </section>
-      </div>
-    </>
-  );
+ return(
+<AppUI loading={loading} error={error}completedTodos={completedTodos}totalTodos={totalTodos}completed={completed} searchValue={searchValue} 
+setsearchValue={setsearchValue} searching={searching} completing={completing} deleting={deleting}> 
+
+</AppUI>
+
+ )
 }
