@@ -4,7 +4,9 @@ import Search from "./components/Search";
 import List from "./components/List";
 import Counter from "./components/Counter";
 import Item from "./components/Item";
-
+import ToDoLoading from "./components/ToDoLoading";
+import ToDoError from "./components/ToDoError";
+import EmptyTodo from "./components/EmptyTodo";
 // eslint-disable-next-line react/prop-types
 export default function AppUI({loading,error,completedTodos,totalTodos,completed,searchValue,setsearchValue,searching,completing,deleting}){
 
@@ -23,9 +25,9 @@ export default function AppUI({loading,error,completedTodos,totalTodos,completed
               <List>
                 <>
 
-                {loading&&<p>cargando</p>}
-              {error && <p>Huno un error</p>}
-              {(!loading && searching.length==0 )&&<p>Crear tu primer ToDo!</p>}
+                {loading&&<ToDoLoading/>}
+              {error && <ToDoError/>}
+              {(!loading && searching.length==0 )&&<EmptyTodo/>}
 
 
                   {searching.map((todo) => (
