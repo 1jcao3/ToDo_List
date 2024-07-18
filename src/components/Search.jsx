@@ -1,26 +1,25 @@
 import "../Styles/Inputs.css"
-import PropTypes from 'prop-types'
-export default function Search({searchValue,setsearchValue}){
+import React from 'react'
+import { ToDoContext } from "./ToDoContext/ToDoContext";
 
 
-return(
+export default function Search(){
 
+    const {searchValue, setsearchValue} = React.useContext(ToDoContext);
 
-    <>
-    
-    <input type="text" placeholder="search" id="search" value={searchValue} onChange={(event)=>{
+    return (
+        <>
+<div className="search-c">
 
-setsearchValue(event.target.value)
-
-    }} ></input>
-    
-    </>
-)
-
-}
-
-Search.propTypes={
-
-    searchValue:PropTypes.string,
-    setsearchValue:PropTypes.func
+            <input 
+                type="text" 
+                placeholder="search" 
+                id="search" 
+                value={searchValue} 
+                onChange={(event) => setsearchValue(event.target.value)} 
+            />
+            
+            </div>
+        </>
+    );
 }

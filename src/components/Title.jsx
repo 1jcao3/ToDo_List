@@ -4,8 +4,9 @@ export default function Title(){
 return (
 
     <>
-    
-    <h1>To-Do</h1>
+    <div className="container-t">
+    <h1>TO-DO</h1>
+    </div>
     
     </>
 )

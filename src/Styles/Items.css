@@ -4,19 +4,81 @@
 
 display: flex;
 flex-direction: column;
-    
+align-items: center;
+justify-content: start;
+padding: 0%;
+width: 100%;
+
+
 }
 li{
-    list-style:square;
-display: flex;
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: baseline;
+   
+}
+li span{
+  
+display: grid;
+grid-template-columns: 10% 60% 10%;
+margin: 0%;
+width: 100%;
+gap: 10%;
+
     }
+   
 span{
 
 
     display: grid;
-    grid-template-columns: 20% 1fr ;
-    margin: 30px;
+    grid-template-columns: 5% 1fr ;
+   
     font-size: 1.5rem;
     align-items: center;
-    gap: 10px;
+    color: black;
+
+    
+}
+.list-c{
+
+background-color: rgb(255, 255, 255);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: start;
+width: 268px;
+height: 316px;
+margin-top: 50px;
+border-radius: 22px;
+border-color: #d2d7d7bd;
+border-style: solid;
+padding-right: 10px;
+padding-left: 10px;
+overflow: auto;
+scroll-behavior: smooth;
+scrollbar-width: none;
+
+
+}
+.empty{
+    background-color: rgb(239, 255, 254);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 268px;
+height: 316px;
+margin-top: 50px;
+border-radius: 22px;
+
+
+    
+}
+li:nth-child(odd) {
+    background-color: rgba(128, 128, 128, 0.11);
+    border-radius: 12px;
+}
+li:nth-child(even) {
+    background-color: white;
 }

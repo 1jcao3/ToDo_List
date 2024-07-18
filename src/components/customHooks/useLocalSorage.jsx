@@ -2,7 +2,8 @@ import React from "react";
 
 function useLocalStorage(itemName,initialValue){
 
-
+// eslint-disable-next-line no-unused-vars
+const ToDo_v1=[]
 
   const [item,setItem]=React.useState(initialValue) 
   const [loading,setLoading]=React.useState(true)
@@ -15,7 +16,7 @@ setTimeout(()=>{
 
 
   try{
-    const localStorageItem = localStorage.getItem(itemName);
+    const localStorageItem = localStorage.getItem("ToDo_v1");
     let parsedItem;
 
     if (!localStorageItem) {

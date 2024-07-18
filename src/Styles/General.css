@@ -13,24 +13,93 @@ body{
 #root{
 
     display: flex;
-   
+    z-index: 9;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     
+}
+
+#modales{
+
+    display: flex;
+left: 0;
+top: 0;
+    position: fixed;
+    z-index: 10;
+}
+.modal-container{
+
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(137, 135, 133, 0.815);
+    height: 100vh;
+    width: 100vw;
+    color: azure;
+    
+   
+    
+}
+.container-c{
+
+
+    display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 100px;
+margin-bottom: 0%;
+    background: #cc8dff00;
+    color: #000000;
+    border-radius: 10px;
+    width: 267px;
+    height: 50px;
+
 }
 p{
 
 
     font-size: 1rem;
 }
+
+.container-t{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    top: 0%;
+    width: 100%;
+height: 72px;
+    background: #d2d7d75e;
+}
 h1{
 
-font-size: 3rem;
-color: rgb(53, 87, 62);
+font-size: 24px;
+color: rgb(8, 8, 8);
 
 }
 
+form{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+flex-direction: column;
+background-color: rgb(254, 254, 254);
+
+padding: 10%;
+padding-bottom: 20px;
+border-radius: 10px;
+}
+label{
+
+color: rgb(48, 141, 222);
+
+padding: 10%;
+
+}
 @media (min-width:768px){
 
     h1{
@@ -44,7 +113,7 @@ color: rgb(53, 87, 62);
 
     h1{
 
-        font-size:5rem ;
+        font-size:2rem ;
     }
     
 }

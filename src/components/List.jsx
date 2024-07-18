@@ -2,14 +2,16 @@
 import "../Styles/Buttons.css"
 
 import PropTypes from "prop-types"
-export default function List({children}) {
+export default function List({children,classy}) {
 
   return (
     <>
-      <ul className="listItem">
+    <div className={classy ?'empty':'list-c'}>
+      <ul className={'listItem'}>
        
 {children}
       </ul>
+      </div>
     </>
   );
 }
@@ -17,6 +19,7 @@ export default function List({children}) {
 List.propTypes={
 
 
-  children:PropTypes.element
+  children:PropTypes.element,
+  classy:PropTypes.bool
 }
 

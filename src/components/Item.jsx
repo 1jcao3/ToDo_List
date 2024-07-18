@@ -13,7 +13,7 @@ export default function Item({ text, completed ,onCompleted,onDelete}) {
 
   return (
     <>
-      <li>
+      <li >
         <span style={styles}>
          
 <span onClick={onCompleted}
@@ -22,10 +22,12 @@ id="check">
           <CiCircleCheck className="check" 
           />
           </span>
-          {text}
-        </span>
+          <p>
+          {text}</p>
+        
         
         <span id="delete" onClick={onDelete}><MdDelete></MdDelete></span>
+        </span>
       </li>
     </>
   );
